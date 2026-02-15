@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>2PC</title>
+        <link rel="stylesheet" href="/site.css" />
+        <script type="module" src="app.js"></script>
+    </head>
+    <body>
+        <main>
+            <section id="crypto-dysphoria" hidden>
+                <p>Oh wow, you seem confused. Your act is just a charade! Are you Alice? Are you Bob? Who knows!</p>
+            </section>
+            <section id="sec-share" hidden>
+                <h2>Share this link</h2>
+                <p>Send this URL to the other party. Click to copy:</p>
+                <pre><a id="share-url" href="#"></a></pre>
+            </section>
+            <section id="sec-my-message" hidden>
+                <h2>Commit</h2>
+                <form id="commit-form">
+                    <label for="my-message">Your message (can be empty)</label>
+                    <textarea id="my-message" rows="3"></textarea>
+                    <button id="commit-btn" type="submit">Commit</button>
+                </form>
+            </section>
+            <section id="sec-wait-peer" hidden>Waiting for peer to connect...</section>
+            <section id="sec-my-commitment" hidden>
+                <h3>Your commitment</h3>
+                <pre id="my-commitment"></pre>
+            </section>
+            <section id="sec-their-commitment" hidden>
+                <h3>Their commitment</h3>
+                <pre id="their-commitment"></pre>
+            </section>
+            <section id="sec-wait-reveal" hidden>
+                <p>Waiting for reveal from peer.</p>
+            </section>
+            <section id="sec-verify"></section>
+        </main>
+
+        <section id="reconnect-overlay" hidden>
+            <section id="reconnect">
+                <h2>Reconnecting...</h2>
+                <p>Connection lost. Attempting to reconnect...</p>
+            </section>
+        </section>
+
+        <section id="error-overlay" hidden>
+            <section id="error">
+                <h2>Error</h2>
+                <p>
+                    An error occured. This can happen for many different reasons. Usually it is benign, but it could
+                    signal that your peer is trying to tamper with the commitment.
+                </p>
+                <h3>Message</h3>
+                <pre id="error-message"></pre>
+            </section>
+        </section>
+    </body>
+</html>
