@@ -5,6 +5,7 @@ use rust_embed::Embed;
 
 #[derive(Embed)]
 #[folder = "$CARGO_MANIFEST_DIR/assets"]
+#[exclude = "**/__tests__/**"]
 struct Asset;
 
 struct StaticFile<T>(pub T);

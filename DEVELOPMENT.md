@@ -36,6 +36,16 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
   Runs `esbuild` in watch mode to continuously rebuild the frontend TypeScript (`assets/app.ts`) during development.
   These changes are automatically picked up by the backend when built with debugging.
 
+## Testing
+
+Frontend tests use [Vitest](https://vitest.dev/) and live under `assets/__tests__/`.
+
+```bash
+npm install           # install test dependencies (first time only)
+npm test              # run all tests once
+npm run test:watch    # run tests in watch mode
+```
+
 ## AI Policy
 
 Please read [AI_POLICY.md](AI_POLICY.md) before contributing.
