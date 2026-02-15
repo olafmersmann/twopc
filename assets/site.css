@@ -23,15 +23,29 @@ body {
 }
 
 main {
-    display: block;
     max-width: 40rem;
     margin: 0 auto;
     padding: 0.5rem;
 }
 
+h1,
+h2,
+h3 {
+    background: none;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
 h1 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1rem;
 }
 
 p {
@@ -73,19 +87,10 @@ label {
     margin-bottom: 0.25rem;
 }
 
-h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
 section {
     margin-bottom: 0.5rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 textarea:disabled,
@@ -95,20 +100,7 @@ pre {
     word-break: break-all;
 }
 
-textarea.mono {
-    font-family: ui-monospace, monospace;
-    font-size: 0.8rem;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-}
-
-#copy-feedback {
-    color: green;
-    font-weight: 600;
-}
-
-#reconnect-overlay,
-#error-overlay {
+.overlay {
     position: fixed;
     inset: 0;
     display: flex;
@@ -116,21 +108,20 @@ textarea.mono {
     justify-content: center;
     z-index: 9999;
 }
-#reconnect-overlay[hidden],
-#error-overlay[hidden] {
+
+.overlay[hidden] {
     display: none;
 }
 
-#reconnect-overlay {
+#sec-reconnect {
     background: #7777;
 }
 
-#error-overlay {
+#sec-error {
     background: #f777;
 }
 
-#reconnect,
-#error {
+.modal {
     background: #fff;
     padding: 1rem;
     border: 1px solid #ccc;
@@ -141,7 +132,7 @@ textarea.mono {
     overflow: auto;
 }
 
-section#crypto-dysphoria {
+#crypto-dysphoria {
     padding: 0.5rem;
     border-radius: 0.5rem;
 
@@ -164,15 +155,8 @@ section#crypto-dysphoria {
 }
 
 .pass {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-
-    background: #0704;
+    background: #bdb;
 }
-
 .fail {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-
-    background: #7004;
+    background: #dbb;
 }

@@ -140,10 +140,10 @@ onEnter(AppState.SHARED_SECRET, async () => {
     $("#sec-wait-peer").hidden = true;
 
     mailbox.onDisconnect = () => {
-      $("#reconnect-overlay").hidden = false;
+      $("#sec-reconnect").hidden = false;
     };
     mailbox.onConnect = () => {
-      $("#reconnect-overlay").hidden = true;
+      $("sec-reconnect").hidden = true;
     };
 
     dispatch(Event.PeerConnectionEstablished);
@@ -234,7 +234,7 @@ onEnter(AppState.FAIL, () => {
   } else {
     $("#error-message").textContent = "Generic error.";
   }
-  $("#error-overlay").hidden = false;
+  $("#sec-error").hidden = false;
 });
 
 // ----------------------------------------------
