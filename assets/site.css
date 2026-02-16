@@ -1,3 +1,7 @@
+:root {
+    color-scheme: light dark;
+}
+
 *,
 *::before,
 *::after {
@@ -18,8 +22,7 @@ html {
 body {
     min-height: 100dvh;
     padding: 1rem;
-    color: #333;
-    background: #fff;
+    scrollbar-gutter: stable; /* Prevent layout shift because of scrollbar */
 }
 
 main {
@@ -60,25 +63,18 @@ pre {
     color: inherit;
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
     border-radius: 0.25rem;
     margin-bottom: 0.75rem;
 }
 
-button {
-    cursor: pointer;
-    background: #333;
-    color: #fff;
+textarea {
+    field-sizing: content;
+    min-height: 2lh;
 }
 
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-button:active {
-    background: #fff;
-    color: #333;
 }
 
 label {
@@ -89,15 +85,15 @@ label {
 
 section {
     margin-bottom: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.25rem;
     border-radius: 0.5rem;
 }
 
 textarea:disabled,
 pre {
-    background: #eee;
+    backdrop-filter: blur(12px) saturate(1.5);
+    background: #7773;
     cursor: default;
-    word-break: break-all;
 }
 
 .overlay {
@@ -107,37 +103,33 @@ pre {
     align-items: center;
     justify-content: center;
     z-index: 9999;
+    backdrop-filter: blur(6px) saturate(1.5);
 }
 
 .overlay[hidden] {
     display: none;
 }
 
-#sec-reconnect {
-    background: #7777;
+.modal {
+    padding: 1rem;
+    border: 1px solid #777;
+    border-radius: 0.25rem;
+    width: 40rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+    background: light-dark(#eee, #111);
 }
 
 #sec-error {
     background: #f777;
 }
 
-.modal {
-    background: #fff;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    width: 40rem;
-    max-width: 90vw;
-    max-height: 90vh;
-    overflow: auto;
-}
-
 #crypto-dysphoria {
-    padding: 0.5rem;
     border-radius: 0.5rem;
 
     background: linear-gradient(
-        to right,
+        -70deg,
         hsl(0, 100%, 50%),
         hsl(60, 100%, 50%),
         hsl(120, 100%, 50%),
@@ -147,16 +139,19 @@ pre {
         hsl(360, 100%, 50%)
     );
     p {
+        color: #111;
         padding: 0.25rem;
         margin: 0px;
         border-radius: 0.25rem;
-        background: #fffc;
+        backdrop-filter: blur(12px) saturate(1.5);
+        background: rgba(255, 255, 255, 0.5);
     }
 }
 
 .pass {
-    background: #bdb;
+    background: light-dark(#bdb, #272);
 }
+
 .fail {
-    background: #dbb;
+    background: light-dark(#dbb, #722);
 }
