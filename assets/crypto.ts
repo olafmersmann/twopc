@@ -66,7 +66,7 @@ export function deriveSharedKey(pk: CryptoKey, sk: CryptoKey): Promise<CryptoKey
 const SIGN_ALGO = {
   name: "HMAC",
   hash: "SHA-256",
-  length: 128,
+  length: 96,
 };
 
 export function generateSharedSecret(): Promise<CryptoKey> {
